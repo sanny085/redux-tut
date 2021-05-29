@@ -2,6 +2,9 @@ import React, {useState} from 'react'
 import './App.css';
 import User from './User';
 
+import HomeContainer from './containers/HomeContainer';
+
+
 function App() {
   const [name, setName] = useState({
     name:'Sanny Kumar',
@@ -9,8 +12,11 @@ function App() {
   });
   return (
     <div className="App">
-      <h1>App Component</h1>
-      <User data={{name}}/>
+    
+       {/*<User data={{name}}/>*/} 
+       <HomeContainer/>
+
+
     </div>
   );
 }
