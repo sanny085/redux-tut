@@ -36,6 +36,15 @@
   color: #fff;
   box-shadow: #333 0px 1px 5px;
 }
+ .remove_item{
+  background-color: #03203C !important;
+  border: 0px !important;
+  padding: 8px !important;
+  margin:5px !important;
+  border-radius: 4px !important;
+  color: #fff !important;
+  box-shadow: #333 0px 1px 5px !important;
+}
 .img-wrapper img {
   width: 90px;
   height:120px;
