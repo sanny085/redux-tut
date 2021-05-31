@@ -1,7 +1,10 @@
   
-import React from 'react'
+import React,{ useState } from 'react'
+import { Link } from 'react-router-dom'
+
 
 function Header(props) {
+    const [eachData, setEachData] = useState(props.data);
     console.log("Header Props",props);
 
     console.log("Header length ",props.data);
@@ -10,25 +13,28 @@ function Header(props) {
         <div className="add-to-cart">
            <span className="cart-count">{props.data.length}</span>
                 <img src="https://static.vecteezy.com/system/resources/thumbnails/000/496/007/small/Ecommerce_998.jpg" />
-         </div>  
+         </div> 
+         <Link to="/">Home</Link>
+         <br/><br/> 
         {/*All map data*/}
-           {props.data.map(eachData => (
+           {
+            eachData.map(each => (
             <div className="cart-wrapper">
             <div className="img-wrapper item">
-                <img src= {eachData.cardData?.image} />
+                <img src= {each.cardData?.image} />
             </div>
             <div className="text-wrapper item">
                 <span>
-                    {eachData.cardData?.name}
+                    {each.cardData?.name}
                 </span>
                 <p>
-                    {eachData.cardData?.price}
+                    {each.cardData?.price}
                 </p>
             </div>
             <div className="btn-wrapper item">
 
                 <button className="remove_item" onClick={()=> 
-                        props.removeToCartHandler({eachData})
+                        props.removeToCartHandler({each})
                       } >Remove To Cart</button>
             </div>
             </div>
