@@ -21,20 +21,20 @@ function Header(props) {
             eachData.map(each => (
             <div className="cart-wrapper">
             <div className="img-wrapper item">
-                <img src= {each.cardData?.fProduct?.image} />
+                <img src= {each.cardData?.value?.image} />
             </div>
             <div className="text-wrapper item">
                 <span>
-                    {each.cardData?.fProduct?.name}
+                    {each.cardData?.value?.name}
                 </span>
                 <p>
-                    {each.cardData?.fProduct?.price}
+                    {each.cardData?.value?.price}
                 </p>
             </div>
             <div className="btn-wrapper item">
 
                 <button className="remove_item" onClick={()=> 
-                        props.removeToCartHandler({each})
+                        props.removeToCartHandler({id:each.cardData?.value?.id})
                       } >Remove To Cart</button>
             </div>
             </div>

@@ -22,11 +22,8 @@ function Home(props) {
        }
     ]);
     
-
     console.log("Home Props",props);
-
     console.log("Home length ",props.data);
-
 
     return (
         <div>
@@ -38,13 +35,11 @@ function Home(props) {
              </Link>
            </div>  
 
-
-
             <h1>Home Component</h1>
               {
-                fProduct.map((value) => (
-                <>
-                <div className="cart-wrapper">
+                fProduct.map( value => 
+                (<>
+                <div className="cart-wrapper" key={value}>
                 <div className="img-wrapper item">
                     <img src={value.image} />
                 </div>
@@ -69,15 +64,11 @@ function Home(props) {
                 </div>
               </div>
             </>
-            )
-            ))
-
-
-            }
-            
-            
+              ))
+            }            
         </div>
     )
 }
 
 export default Home;
+

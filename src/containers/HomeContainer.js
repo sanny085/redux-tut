@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 import {addToCart, removeToCart} from '../service/actions/actions' 
 
 const mapStateToProps=state=>({
-    
      data:state.cardItems
 })
 
