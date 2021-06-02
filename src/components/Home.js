@@ -1,14 +1,33 @@
   
-import React from 'react'
+import React, {useState} from 'react'
 import {
     Link
   } from "react-router-dom";
 
+import {v4} from 'uuid';
 
 function Home(props) {
+    const [fProduct, setProduct] = useState([
+       {
+        image:'https://3.bp.blogspot.com/-X9kbAWv7xbY/WeRGs4OVR_I/AAAAAAAAGHQ/B9jrJhxotzo05R-Jb7egIhz8syZa5lBwACLcBGAs/s1600/iPhoneX.png',
+        price: 1000, 
+        name:'I-Phone',
+        id : v4(),
+       },
+       {
+         image:'https://m.media-amazon.com/images/I/71MHTD3uL4L.jpg',
+         price: 2000, 
+         name:'Apple IPhone 12',
+         id : v4(),
+       }
+    ]);
+    
+
     console.log("Home Props",props);
 
     console.log("Home length ",props.data);
+
+
     return (
         <div>
            <div className="add-to-cart">
@@ -22,63 +41,43 @@ function Home(props) {
 
 
             <h1>Home Component</h1>
-            <div className="cart-wrapper">
+              {
+                fProduct.map((value) => (
+                <>
+                <div className="cart-wrapper">
                 <div className="img-wrapper item">
-                    <img src="https://3.bp.blogspot.com/-X9kbAWv7xbY/WeRGs4OVR_I/AAAAAAAAGHQ/B9jrJhxotzo05R-Jb7egIhz8syZa5lBwACLcBGAs/s1600/iPhoneX.png" />
+                    <img src={value.image} />
                 </div>
                 <div className="text-wrapper item">
                     <span>
-                        I-Phone
+                       {value.name}
                     </span>
                     <p>
-                        Price: $1000.00
+                       {value.price}
                     </p>
                 </div>
                 <div className="btn-wrapper item">
                     <button onClick={()=>
                         props.addToCartHandler({
-                            image:'https://3.bp.blogspot.com/-X9kbAWv7xbY/WeRGs4OVR_I/AAAAAAAAGHQ/B9jrJhxotzo05R-Jb7egIhz8syZa5lBwACLcBGAs/s1600/iPhoneX.png',
-                            price: 1000, 
-                            name:'I-Phone'})
+                           value
+                            })
                       }>Add To Cart</button>
 
                     <button className="remove_item" onClick={()=> 
-                        props.removeToCartHandler()
+                        props.removeToCartHandler({id:value.id})
                       }>Remove To Cart</button>
                 </div>
-            </div>
+              </div>
+            </>
+            )
+            ))
+
+
+            }
             
-            <div className="cart-wrapper">
-                <div className="img-wrapper item">
-                    <img src="https://m.media-amazon.com/images/I/71MHTD3uL4L.jpg" />
-                </div>
-                <div className="text-wrapper item">
-                    <span>
-                       Apple IPhone 12 
-                    </span>
-                    <p>
-                        Price: $2000.00
-                    </p>
-                </div>
-                <div className="btn-wrapper item">
-                    <button onClick={()=>
-                        props.addToCartHandler({
-                            image:'https://m.media-amazon.com/images/I/71MHTD3uL4L.jpg',
-                            price: 2000, 
-                            name:'Apple IPhone 12'})
-                      }>Add To Cart</button>
-
-                    <button className="remove_item" onClick={()=> 
-                        props.removeToCartHandler()
-                      }>Remove To Cart</button>
-                </div>
-            </div>
-
-
-
-
-
+            
         </div>
     )
 }
+
 export default Home;

@@ -21,14 +21,14 @@ function Header(props) {
             eachData.map(each => (
             <div className="cart-wrapper">
             <div className="img-wrapper item">
-                <img src= {each.cardData?.image} />
+                <img src= {each.cardData?.fProduct?.image} />
             </div>
             <div className="text-wrapper item">
                 <span>
-                    {each.cardData?.name}
+                    {each.cardData?.fProduct?.name}
                 </span>
                 <p>
-                    {each.cardData?.price}
+                    {each.cardData?.fProduct?.price}
                 </p>
             </div>
             <div className="btn-wrapper item">

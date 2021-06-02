@@ -7,7 +7,7 @@ export const addToCart =(data)=>{
     }
 }
 
-export const removeToCart =(eachData)=>{
+export const removeToCart = (eachData) => {
     console.warn("action removeToCart",eachData);
     return {
         type:REMOVE_TO_CART, 
