@@ -59,7 +59,7 @@ function Home(props) {
                       }>Add To Cart</button>
 
                     <button className="remove_item" onClick={()=> 
-                        props.removeToCartHandler({id:value.id})
+                        props.removeToCartHandler({value})
                       }>Remove To Cart</button>
                 </div>
               </div>

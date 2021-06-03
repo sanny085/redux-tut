@@ -22,7 +22,6 @@ function App() {
      
   return (
     <div className="App">
-    
        {/*<User data={{name}}/>*/} 
        <Router>
          <Switch>
@@ -37,7 +36,6 @@ function App() {
             <Route exact path="*" component={PageNotFound} /> 
          </Switch>
        </Router>
-       
     </div>
   );
 }

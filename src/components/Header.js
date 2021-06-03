@@ -1,5 +1,5 @@
   
-import React,{ useState } from 'react'
+import React,{ useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 
@@ -8,6 +8,14 @@ function Header(props) {
     console.log("Header Props",props);
 
     console.log("Header length ",props.data);
+
+    useEffect(()=>{
+        setEachData(props.data);
+    },[eachData]);
+
+    const removeEachValue = (each) =>  {
+        return each.cardData.value;
+    } 
  return (
   <>
         <div className="add-to-cart">
@@ -34,7 +42,7 @@ function Header(props) {
             <div className="btn-wrapper item">
 
                 <button className="remove_item" onClick={()=> 
-                        props.removeToCartHandler({id:each.cardData?.value?.id})
+                        props.removeToCartHandler(removeEachValue(each))
                       } >Remove To Cart</button>
             </div>
             </div>

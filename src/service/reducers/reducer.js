@@ -14,9 +14,10 @@ export default function cardItems(state = [], action) {
         case REMOVE_TO_CART:
                 console.warn("Remove reducer",action);
                 console.warn("Remove reducer action payload",action.payload)
+                console.log("Remove state",state);
                // state.pop();  
-               return state.filter((comment) => comment.id !== action.payload.each.cardData.id)
-               
+               return  state.map((e) =>  e.cardData?.value.filter(({id}) => id !== action.payload.id)) 
+              
         default:
             return state
     }
