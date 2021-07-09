@@ -1,9 +1,7 @@
-  
 import React, {useState} from 'react'
 import {
     Link
   } from "react-router-dom";
-
 import {v4} from 'uuid';
 
 function Home(props) {
@@ -67,7 +65,6 @@ function Home(props) {
             <Link to="/header">
              <span className="cart-count">{props.data.cardData.length}</span>
                  <img src="https://static.vecteezy.com/system/resources/thumbnails/000/496/007/small/Ecommerce_998.jpg" />
-
              </Link>
            </div>  
 
@@ -110,4 +107,3 @@ function Home(props) {
 }
 
 export default Home;
-
