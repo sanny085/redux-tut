@@ -5,7 +5,6 @@ import { removeToCart} from '../service/actions/actions'
 const mapStateToProps=state=>({
      data:state.cardItems
 })
-
 const mapDispatchToProps= dispatch => ({
      removeToCartHandler:eachData => dispatch(removeToCart(eachData))
 })
